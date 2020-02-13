@@ -1,0 +1,227 @@
+@import 'src/scss/variables';
+@import 'src/scss/between';
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 50px;
+
+  &__image {
+    background-image: url('../../images/hero-mobile.png');
+    width: 100%;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: 50% 20%;
+
+    &:before {
+      content: "";
+      background-image: linear-gradient(309.64deg, #FF0050 9.75%, #0061FF 85.99%);
+      mix-blend-mode: multiply;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      opacity: 0.85;
+      background-size: cover;
+      background-position: 50% 50%;
+    }
+  }
+
+  &__content {
+    width: 100%;
+  }
+
+  &__header {
+    background-color: $color-blue-dark;
+    padding: 40px 0 67px 0;
+
+    h1 {
+      font-weight: 400;
+      width: 80%;
+    }
+
+    &__bold {
+      font-weight: 600;
+      padding-left: 5px;
+
+      &--red {
+        color: $color-red;
+      }
+    }
+  }
+
+  &__search {
+    width: 100%;
+    height: 54px;
+    border-radius: 5px;
+    margin-top: -27px;
+    box-shadow: 0 4px 30px rgba(0,0,60,0.1);
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+
+    &__input {
+      width: 100%;
+      height: 100%;
+      background-color: $color-white;
+      border: 0;
+      font-size: $fontsize-input-mobile;
+      color: $color-dark-100;
+      padding: 15px 50px 15px 15px;
+      box-sizing: border-box;
+      outline: none;
+      border-radius: 5px;
+
+      &::placeholder {
+        color: $color-dark-100;
+      }
+    }
+
+    svg {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 20px;
+      width: 20px;
+
+      path {
+        fill: $color-blue;
+      }
+    }
+  }
+
+  &__keywords-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  &__keyword {
+    background-color: $color-dark-10;
+    color: $color-dark-80;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 8px;
+    margin-bottom: 10px;
+    font-size: 10px;
+    font-weight: 500;
+    border: 0;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+
+    &:before {
+      content: "";
+      background-color: $color-dark-20;
+      position: absolute;
+      top: 100%;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: -1;
+      transition: top .2s ease-out;
+    }
+
+    &:hover {
+      &:before {
+        top: 0;
+      }
+    }
+  }
+
+  @media(min-width: $size-tablet) {
+    flex-direction: row-reverse;
+    margin-bottom: between(50px, 100px, $size-tablet, $size-desktop);
+
+    &__image {
+      background-image: url('../../images/hero.png');
+      width: 50%;
+      height: auto;
+      border-radius: 0 0 0 10px;
+      background-position: 50% 50%;
+    }
+
+    &__content {
+      width: 50%;
+    }
+
+    &__header {
+      background-color: $color-blue-dark;
+      padding: between(40px, 90px, $size-tablet, $size-desktop) 0 between(40px, 122px, $size-tablet, $size-desktop) 0;
+    }
+
+    &__search {
+      height: between(54px, 64px, $size-tablet, $size-desktop);
+      margin-top: between(-27px, -32px, $size-tablet, $size-desktop);
+      margin-bottom: between(20px, 30px, $size-tablet, $size-desktop);
+
+      &__input {
+        font-size: between($fontsize-input-mobile, $fontsize-input-desktop, $size-tablet, $size-desktop);
+        padding-top: between(15px, 20px, $size-tablet, $size-desktop);
+        padding-bottom: between(15px, 20px, $size-tablet, $size-desktop);
+        padding-left: between(15px, 20px, $size-tablet, $size-desktop);
+        padding-right: between(50px, 60px, $size-tablet, $size-desktop);
+      }
+
+      svg {
+        right: between(15px, 20px, $size-tablet, $size-desktop);
+      }
+    }
+
+    &__keywords-wrapper {
+      margin-bottom: between(15px, 40px, $size-tablet, $size-desktop);
+    }
+
+    &__keyword {
+      padding: between(5px, 8px, $size-tablet, $size-desktop) between(10px, 12px, $size-tablet, $size-desktop);
+      margin-right: between(8px, 10px, $size-tablet, $size-desktop);
+      margin-bottom: between(10px, 12px, $size-tablet, $size-desktop);
+      font-size: between(10px, 12px, $size-tablet, $size-desktop);
+    }
+  }
+
+  @media(min-width: $size-desktop) {
+    margin-bottom: 100px;
+
+    &__header {
+      padding: 90px 0 122px 0;
+    }
+
+    &__search {
+      height: 64px;
+      margin-top: -32px;
+      margin-bottom: 30px;
+
+      &__input {
+        font-size: $fontsize-input-desktop;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 60px;
+      }
+
+      svg {
+        right: 20px;
+      }
+    }
+
+    &__keywords-wrapper {
+      margin-bottom: 40px;
+    }
+
+    &__keyword {
+      padding: 8px 12px;
+      margin-right: 10px;
+      margin-bottom: 12px;
+      font-size: 12px;
+    }
+  }
+}

@@ -23,6 +23,8 @@
       "esSpecCompliant": true
     }],
     "interface-name" : [true, "never-prefix"],
-    "jsx-no-lambda": false
+    "jsx-no-lambda": false,
+    "jsx-no-multiline-js": false,
+    "jsx-boolean-value": [true, "never"]
   }
 }

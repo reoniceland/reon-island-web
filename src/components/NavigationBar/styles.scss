@@ -1,0 +1,70 @@
+@import 'src/scss/variables';
+@import 'src/scss/between';
+
+.nav-bar {
+  width: 100%;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: $color-white;
+  box-sizing: border-box;
+
+  &__logo {
+    display: block;
+    width: 140px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__mobile-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+  }
+
+  &__action-list {
+    display: none;
+  }
+
+  @media(min-width: $size-tablet) {
+    height: between(64px, 80px, $size-tablet, $size-desktop);
+
+    &__content {
+      width: 70%
+    }
+
+    &__mobile-actions {
+      display: none;
+    }
+
+    &__action-list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  @media(min-width: $size-tablet-large) {
+    &__content {
+      width: 60%
+    }
+  }
+
+  @media(min-width: $size-desktop) {
+    height: 80px;
+
+    &__content {
+      width: 50%
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@import 'src/scss/variables';
+@import 'src/scss/between';
+
+.sc-wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .service-card {
+    width: 100%;
+  }
+
+  @media(min-width: $size-mobile-large) {
+    .service-card {
+      width: calc(50% - 8px);
+    }
+  }
+
+  @media(min-width: $size-tablet) {
+    .service-card {
+      width: calc(33.3% - 10.6px);
+    }
+  }
+
+  @media(min-width: $size-tablet-large) {
+    .service-card {
+      width: calc(25% - 12px);
+    }
+  }
+}

@@ -1,44 +1,31 @@
 import React from 'react'
+
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
 } from 'react-router-dom'
-
-import './App.css'
+import NavigationBar from './components/NavigationBar'
+import Footer from './components/Footer'
+import FrontPage from './pages/FrontPage'
+import ServicesPages from './pages/ServicesPages'
+import FamilyPages from './pages/FamilyPages'
 
 
 const App = () => {
   return (
     <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-          </ul>
-        </nav>
+        <NavigationBar />
 
         <Switch>
-          <Route path="/about">
-            <div />
-          </Route>
-          <Route path="/users">
-            <div />
-          </Route>
-          <Route path="/">
-            <div />
-          </Route>
+          <Route exact path="/" component={FrontPage} />
+
+          <Route exact path="/þjónustur/fjölskyldan/:subRoute?" component={FamilyPages} />
+
+          <Route exact path="/þjónustur/:subRoute?" component={ServicesPages} />
         </Switch>
-      </div>
+
+        <Footer />
     </Router>
   )
 }

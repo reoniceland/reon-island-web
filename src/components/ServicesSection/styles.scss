@@ -1,0 +1,14 @@
+@import 'src/scss/variables';
+@import 'src/scss/between';
+
+.services {
+  margin-bottom: 50px;
+
+  @media(min-width: $size-tablet) {
+    margin-bottom: between(50px, 100px, $size-tablet, $size-desktop);
+  }
+
+  @media(min-width: $size-desktop) {
+    margin-bottom: 100px;
+  }
+}

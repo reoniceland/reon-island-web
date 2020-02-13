@@ -1,0 +1,76 @@
+@import 'src/scss/variables';
+@import 'src/scss/between';
+
+.page-wrapper {
+  margin-top: -27px;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__search {
+    height: 54px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: $color-white;
+    box-shadow: 0px 4px 30px rgba(0,0,60,0.1);
+    margin-bottom: 25px;
+    max-width: 560px;
+
+    &--desktop {
+      display: none;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 30px;
+  }
+
+  &__content {
+    margin-bottom: 50px;
+  }
+
+  @media(min-width: $size-tablet) {
+    margin-top: between(-27px, -30px, $size-tablet, $size-desktop);
+
+    &__inner {
+      flex-direction: row;
+    }
+
+    &__search {
+      height: between(54px, 60px, $size-tablet, $size-desktop);
+      margin-bottom: between(25px, 55px, $size-tablet, $size-desktop);
+
+      &--mobile {
+        display: none;
+      }
+
+      &--desktop {
+        display: block;
+      }
+    }
+
+    &__nav {
+      width: 20%;
+    }
+
+    &__content {
+      width: calc(80% - 30px);
+      margin-bottom: between(50px, 100px, $size-tablet, $size-desktop);
+    }
+  }
+
+  @media(min-width: $size-desktop) {
+    margin-top: -30px;
+
+    &__search {
+      height: 60px;
+      margin-bottom: 55px;
+    }
+
+    &__content {
+      margin-bottom: 100px;
+    }
+  }
+}

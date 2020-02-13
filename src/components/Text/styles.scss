@@ -1,0 +1,120 @@
+@import 'src/scss/variables';
+@import 'src/scss/between';
+
+.text {
+  font-weight: 400;
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: $color-dark-100;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+
+  &--h1 {
+    font-size: $fontsize-h1-mobile;
+    font-weight: 600;
+  }
+
+  &--h2 {
+    font-size: $fontsize-h2-mobile;
+  }
+
+  &--h3 {
+    font-size: $fontsize-h3-mobile;
+    font-weight: 600;
+  }
+
+  &--h4 {
+    font-size: $fontsize-h4-mobile;
+    font-weight: 600;
+  }
+
+  &--h5 {
+    font-size: $fontsize-h5-mobile;
+    font-weight: 600;
+
+    &--withGutter {
+      margin-bottom: 18px;
+    }
+  }
+
+  &--h6 {
+    font-size: $fontsize-h6-mobile;
+    font-weight: 600;
+  }
+
+  &--p {
+    font-size: $fontsize-p-mobile;
+  }
+
+  &--inverted {
+    color: $color-white;
+  }
+
+  @media(min-width: $size-tablet) {
+    &--h1 {
+      font-size: between($fontsize-h1-mobile, $fontsize-h1-desktop, $size-tablet, $size-desktop);
+    }
+
+    &--h2 {
+      font-size: between($fontsize-h2-mobile, $fontsize-h2-desktop, $size-tablet, $size-desktop);
+    }
+
+    &--h3 {
+      font-size: between($fontsize-h3-mobile, $fontsize-h3-desktop, $size-tablet, $size-desktop);
+    }
+
+    &--h4 {
+      font-size: between($fontsize-h4-mobile, $fontsize-h4-desktop, $size-tablet, $size-desktop);
+    }
+
+    &--h5 {
+      font-size: between($fontsize-h5-mobile, $fontsize-h5-desktop, $size-tablet, $size-desktop);
+
+      &--withGutter {
+        margin-bottom: between(18px, 20px, $size-tablet, $size-desktop);
+      }
+    }
+
+    &--h6 {
+      font-size: between($fontsize-h6-mobile, $fontsize-h6-desktop, $size-tablet, $size-desktop);
+    }
+
+    &--p {
+      font-size: between($fontsize-p-mobile, $fontsize-p-desktop, $size-tablet, $size-desktop);
+    }
+  }
+
+  @media(min-width: $size-desktop) {
+    &--h1 {
+      font-size: $fontsize-h1-desktop;
+    }
+
+    &--h2 {
+      font-size: $fontsize-h2-desktop;
+    }
+
+    &--h3 {
+      font-size: $fontsize-h3-desktop;
+    }
+
+    &--h4 {
+      font-size: $fontsize-h4-desktop;
+    }
+
+    &--h5 {
+      font-size: $fontsize-h5-desktop;
+
+      &--withGutter {
+        margin-bottom: 20px;
+      }
+    }
+
+    &--h6 {
+      font-size: $fontsize-h6-desktop;
+    }
+
+    &--p {
+      font-size: $fontsize-p-desktop;
+    }
+  }
+}

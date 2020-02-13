@@ -1,0 +1,50 @@
+@import 'src/scss/variables';
+@import 'src/scss/between';
+
+.title-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+
+  &__link {
+    font-size: $fontsize-button-mobile;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+
+    svg {
+      height: 15px;
+      width: 15px;
+      margin-left: 10px;
+      transition: transform .3s ease-out;
+
+      path {
+        fill: $color-blue;
+      }
+    }
+
+    &:hover {
+      svg {
+        transform: translateX(-3px);
+      }
+    }
+  }
+
+  @media(min-width: $size-tablet) {
+    margin-bottom: between(30px, 55px, $size-tablet, $size-desktop);
+
+    &__link {
+      font-size: between($fontsize-button-mobile, $fontsize-button-desktop, $size-tablet, $size-desktop);
+    }
+  }
+
+  @media(min-width: $size-desktop) {
+    margin-bottom: 55px;
+
+    &__link {
+      font-size: $fontsize-button-desktop;
+    }
+  }
+}

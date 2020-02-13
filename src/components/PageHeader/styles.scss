@@ -1,0 +1,49 @@
+@import 'src/scss/variables';
+@import 'src/scss/between';
+
+.page-header {
+  background-color: $color-blue-dark;
+  height: 110px;
+  padding: 15px 0;
+
+  &__crums-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__crum {
+    color: $color-dark-20;
+    font-weight: 600;
+    font-size: 10px;
+    margin-right: 25px;
+    position: relative;
+
+    &:not(:last-child) {
+      &:after {
+        content: ">";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: -15px;
+      }
+    }
+
+    &:last-child {
+      color: $color-dark-50;
+    }
+  }
+
+  @media(min-width: $size-tablet) {
+    height: between(110px, 200px, $size-tablet, $size-desktop);
+    padding: between(15px, 30px, $size-tablet, $size-desktop) 0;
+
+    &__crums-wrapper {
+      margin-bottom: between(20px, 40px, $size-tablet, $size-desktop);
+    }
+  }
+
+  @media(min-width: $size-desktop) {
+
+  }
+}

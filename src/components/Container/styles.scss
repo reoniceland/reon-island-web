@@ -1,0 +1,32 @@
+@import 'src/scss/variables';
+@import 'src/scss/between';
+
+.container {
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+
+  @media(min-width: $size-tablet) {
+    padding: 0 between(20px, 100px, $size-tablet, $size-desktop);
+
+    &--leftHalf {
+      padding-right: between(20px, 50px, $size-tablet, $size-desktop);
+    }
+
+    &--rightHalf {
+      padding-left: between(20px, 50px, $size-tablet, $size-desktop);;
+    }
+  }
+
+  @media(min-width: $size-desktop) {
+    padding: 0 100px;
+
+    &--leftHalf {
+      padding-right: 50px;
+    }
+
+    &--rightHalf {
+      padding-left: 50px;
+    }
+  }
+}

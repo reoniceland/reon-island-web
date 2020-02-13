@@ -1,0 +1,64 @@
+@import 'src/scss/variables';
+@import 'src/scss/between';
+
+.icon-btn {
+  background-color: $color-blue;
+  border-radius: 5px;
+  height: 40px;
+  width: 40px;
+  border: 0;
+  box-sizing: border-box;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color .3s, opacity .3s;
+
+  svg {
+    height: 20px;
+    width: 20px;
+
+    path {
+      fill: $color-white;
+    }
+  }
+
+  &:hover {
+    background-color: $color-blue-hover;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: $color-blue;
+    }
+  }
+
+  &--secondary {
+    background-color: transparent;
+    transition: opacity .3s;
+
+    svg {
+      height: 24px;
+      width: 24px;
+
+      path {
+        fill: $color-blue-dark;
+      }
+    }
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    &:disabled {
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+}

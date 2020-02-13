@@ -1,16 +1,56 @@
 // COLORS
-$color-white: #ffffff;
+$color-red: #FF0050;
+$color-blue: #0061FF;
+$color-bule-2: #4649D0;
+$color-blue-border: #4D90FF;
+$color-blue-hover: #0B52C5;
+$color-blue-dark: #00003C;
+$color-purple: #6A2EA0;
+$color-pink-purple: #9A0074;
+$color-toothpaste: #00E4CA;
+$color-yellow: #FFF066;
+
+$color-dark-100: #00003C;
+$color-dark-80: #333363;
+$color-dark-50: #80809D;
+$color-dark-20: #CCCCD8;
+$color-dark-10: #E6E6EC;
+$color-gray: #F2F2F5;
+$color-light: #FAFAFB;
+$color-white: #FFFFFF;
 
 // SCREEN SIZES
-$size-XS: 320px;
-$size-SM: 420px;
-$size-MD: 768px;
-$size-LG: 920px;
-$size-XL: 1200px;
-$size-XXL: 1752px;
-
-// SPACING
+$size-mobile: 320px;
+$size-mobile-large: 420px;
+$size-tablet: 800px;
+$size-tablet-large: 1000px;
+$size-desktop: 1400px;
+$size-desktop-large: 2000px;
 
 // FONT SIZES
-$fontsize-h1-mobile: 40px;
-$fontsize-h1-desktop: 80px;
+$fontsize-h1-mobile: 25px;
+$fontsize-h1-desktop: 35px;
+
+$fontsize-h2-mobile: 25px;
+$fontsize-h2-desktop: 32px;
+
+$fontsize-h3-mobile: 24px;
+$fontsize-h3-desktop: 24px;
+
+$fontsize-h4-mobile: 18px;
+$fontsize-h4-desktop: 18px;
+
+$fontsize-h5-mobile: 16px;
+$fontsize-h5-desktop: 16px;
+
+$fontsize-h6-mobile: 12px;
+$fontsize-h6-desktop: 12px;
+
+$fontsize-p-mobile: 16px;
+$fontsize-p-desktop: 16px;
+
+$fontsize-input-mobile: 16px;
+$fontsize-input-desktop: 16px;
+
+$fontsize-button-mobile: 16px;
+$fontsize-button-desktop: 16px;
