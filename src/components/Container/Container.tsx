@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 
-import './Container.scss';
+import './Container.scss'
 
 
 interface ContainerProps {
-  children: any;
+  children: any
 }
 
 export default function Container({
@@ -14,5 +14,5 @@ export default function Container({
     <div>
       {children}
     </div>
-  );
+  )
 }

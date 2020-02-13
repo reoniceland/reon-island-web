@@ -1,13 +1,12 @@
-import React from 'react';
-import logo from './logo.svg';
+import React from 'react'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
-} from 'react-router-dom';
+  Link,
+} from 'react-router-dom'
 
-import './App.css';
+import './App.css'
 
 
 const App = () => {
@@ -28,8 +27,6 @@ const App = () => {
           </ul>
         </nav>
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/about">
             <div />
@@ -43,7 +40,7 @@ const App = () => {
         </Switch>
       </div>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App
