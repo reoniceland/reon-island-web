@@ -1,5 +1,9 @@
 import React from 'react'
 
+import {
+  Link,
+} from 'react-router-dom'
+
 import Text from '../Text'
 import Container from '../Container'
 import Icon from '../Icon'
@@ -11,12 +15,12 @@ import './styles.scss'
 
 export default function Hero() {
   const searchKeys = [
-    "Fæðingarorlof",
-    "Endurnýja lyfseðil",
-    "Heimagisting",
-    "Stofna nýtt einkahlutafélag",
-    "Stafrænt ökuskírteini",
-    "Afskrá ökutæki",
+    { text: "Fæðingarorlof", path: "/þjónustur/fjölskyldan/fæðingarorlof" },
+    { text: "Endurnýja lyfseðil", path: "/" },
+    { text: "Heimagisting", path: "/" },
+    { text: "Stofna nýtt einkahlutafélag", path: "/" },
+    { text: "Stafrænt ökuskírteini", path: "/" },
+    { text: "Afskrá ökutæki", path: "/" },
   ]
 
   return (
@@ -43,10 +47,10 @@ export default function Hero() {
             <Icon name={IconName.Search} />
           </div>
           <div className="hero__keywords-wrapper">
-            {searchKeys.map((keyword, index) => (
-              <button key={index} className="hero__keyword">
-                {keyword}
-              </button>
+            {searchKeys.map((searchItem, index) => (
+              <Link to={searchItem.path} key={index} className="hero__keyword">
+                {searchItem.text}
+              </Link>
             ))}
           </div>
           <Text variant="h5" withGutter>Flýtileiðir</Text>

@@ -2,31 +2,24 @@ import React from 'react'
 
 import {
   map,
-  split,
   capitalize,
-  last,
-  filter,
 } from 'lodash'
-import {
-  useParams,
-  useRouteMatch,
-} from 'react-router-dom'
 
 import Text from '../Text'
 import Container from '../Container'
 
 import './styles.scss'
 
-export default function PageHeader() {
-  const { subRoute } = useParams()
-  const { url } = useRouteMatch()
 
-  const cutUrl = split(url, subRoute)[0]
-  const possibleCrums = split(cutUrl, '/')
-  const breadCrums = filter(possibleCrums, crum => !!crum.length)
+interface Props {
+  breadCrums: string[]
+  title: string
+}
 
-  const title = capitalize(last(breadCrums))
-
+export default function PageHeader({
+  breadCrums,
+  title,
+}: Props) {
   return (
     <div className="page-header">
       <Container>

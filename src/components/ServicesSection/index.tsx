@@ -45,7 +45,7 @@ export default function ServicesSection() {
     {
       icon: IconName.User,
       title: "Fjölskyldan",
-      links: [{ text: "Bóka tíma hjá lækni", linkTo: "/" }, { text: "Endurnýja lyfseðil", linkTo: "/" }],
+      links: [{ text: "Barnabætur", linkTo: "/þjónustur/fjölskylda/barnabætur" }, { text: "Fæðingar- og foreldraorlof", linkTo: "/þjónustur/fjölskylda/fæðingarorlof" }],
       linkTo: "/",
     },
     {
@@ -65,7 +65,7 @@ export default function ServicesSection() {
   return (
     <div className="services">
       <Container>
-        <TitleWrapper btnText="Sjá allt" linkTo="/">
+        <TitleWrapper btnText="Sjá allt" linkTo="/þjónustur">
           <Text variant="h2">Allar þjónustur</Text>
         </TitleWrapper>
 

@@ -1,14 +1,102 @@
 @import 'src/scss/variables';
 @import 'src/scss/between';
 
-.nav-bar {
+.page-nav {
+  background-color: $color-white;
+  border-radius: 5px;
+  box-shadow: 0px 4px 30px rgba(0,0,60,0.03);
+  overflow: hidden;
 
+  &__heading {
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid $color-gray;
+    cursor: pointer;
+
+    svg {
+      width: 16px;
+      height: 16px;
+      transition: transform .3s ease-out;
+
+      path {
+        fill: $color-dark-100;
+      }
+    }
+
+    &__text {
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    &--isActive {
+      svg {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  &__routes {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__route-item {
+    display: block;
+    padding: 15px 25px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: $color-white;
+    border-left: 3px solid transparent;
+    transition: background-color .2s, border-color .2s;
+
+    &--isActive {
+      background-color: $color-gray;
+      border-color: $color-purple;
+      font-weight: 600;
+    }
+
+    &:hover {
+      background-color: $color-gray;
+    }
+  }
+
+  &__sub-routes {
+    border-bottom: 1px solid $color-gray;
+  }
+
+  &__sub-route-item {
+    display: block;
+    padding: 10px 15px 10px 40px;
+    font-size: 12px;
+    cursor: pointer;
+    background-color: $color-light;
+    transition: background-color .2s;
+
+    &--isActive {
+      background-color: $color-gray;
+      font-weight: 600;
+    }
+
+    &:hover {
+      background-color: $color-gray;
+    }
+  }
 
   @media(min-width: $size-tablet) {
+    &__heading {
+      padding: between(20px, 25px, $size-tablet, $size-desktop) 25px;
 
+      svg {
+        display: none;
+      }
+    }
   }
 
   @media(min-width: $size-desktop) {
-
+    &__heading {
+      padding: 25px;
+    }
   }
 }

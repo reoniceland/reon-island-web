@@ -1,0 +1,8 @@
+@import 'src/scss/variables';
+@import 'src/scss/between';
+
+.collapsable {
+  overflow: hidden;
+  position: relative;
+  transition: height .3s ease-out;
+}

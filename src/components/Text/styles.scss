@@ -16,6 +16,10 @@
 
   &--h2 {
     font-size: $fontsize-h2-mobile;
+
+    &--withGutter {
+      margin-bottom: 25px;
+    }
   }
 
   &--h3 {
@@ -33,7 +37,7 @@
     font-weight: 600;
 
     &--withGutter {
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
   }
 
@@ -44,6 +48,10 @@
 
   &--p {
     font-size: $fontsize-p-mobile;
+
+    &--withGutter {
+      margin-bottom: 30px;
+    }
   }
 
   &--inverted {
@@ -51,12 +59,20 @@
   }
 
   @media(min-width: $size-tablet) {
+    &--isContained {
+      max-width: 80%;
+    }
+
     &--h1 {
       font-size: between($fontsize-h1-mobile, $fontsize-h1-desktop, $size-tablet, $size-desktop);
     }
 
     &--h2 {
       font-size: between($fontsize-h2-mobile, $fontsize-h2-desktop, $size-tablet, $size-desktop);
+
+      &--withGutter {
+        margin-bottom: between(25px, 30px, $size-tablet, $size-desktop);
+      }
     }
 
     &--h3 {
@@ -71,7 +87,7 @@
       font-size: between($fontsize-h5-mobile, $fontsize-h5-desktop, $size-tablet, $size-desktop);
 
       &--withGutter {
-        margin-bottom: between(18px, 20px, $size-tablet, $size-desktop);
+        margin-bottom: between(20px, 20px, $size-tablet, $size-desktop);
       }
     }
 
@@ -81,6 +97,10 @@
 
     &--p {
       font-size: between($fontsize-p-mobile, $fontsize-p-desktop, $size-tablet, $size-desktop);
+
+      &--withGutter {
+        margin-bottom: between(30px, 50px, $size-tablet, $size-desktop);
+      }
     }
   }
 
@@ -91,6 +111,10 @@
 
     &--h2 {
       font-size: $fontsize-h2-desktop;
+
+      &--withGutter {
+        margin-bottom: 30px;
+      }
     }
 
     &--h3 {
@@ -115,6 +139,10 @@
 
     &--p {
       font-size: $fontsize-p-desktop;
+
+      &--withGutter {
+        margin-bottom: 50px;
+      }
     }
   }
 }

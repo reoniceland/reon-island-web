@@ -25,6 +25,7 @@ import { ReactComponent as Wheelchair } from '../../icons/wheelchair.svg'
 import { ReactComponent as Phone } from '../../icons/phone.svg'
 import { ReactComponent as Att } from '../../icons/att.svg'
 import { ReactComponent as Facebook } from '../../icons/facebook.svg'
+import { ReactComponent as IndicatorDown } from '../../icons/indicatorDown.svg'
 import { IconName } from '../../constants'
 
 import './styles.scss'
@@ -64,6 +65,7 @@ export default function Icon({
     "phone": Phone,
     "att": Att,
     "facebook": Facebook,
+    "indicatorDown": IndicatorDown,
   }
 
   const IconComponent = icons[name]

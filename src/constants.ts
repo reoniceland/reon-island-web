@@ -24,4 +24,5 @@ export enum IconName {
   Phone = "phone",
   Att = "att",
   Facebook = "facebook",
+  IndicatorDown = "indicatorDown",
 }

@@ -3,6 +3,7 @@
 
 .page-wrapper {
   margin-top: -27px;
+  margin-bottom: 50px;
 
   &__inner {
     display: flex;
@@ -17,9 +18,40 @@
     box-shadow: 0px 4px 30px rgba(0,0,60,0.1);
     margin-bottom: 25px;
     max-width: 560px;
+    position: relative;
 
     &--desktop {
       display: none;
+    }
+
+    &__input {
+      width: 100%;
+      height: 100%;
+      background-color: $color-white;
+      border: 0;
+      font-size: $fontsize-input-mobile;
+      color: $color-dark-100;
+      padding: 15px 50px 15px 15px;
+      box-sizing: border-box;
+      outline: none;
+      border-radius: 5px;
+
+      &::placeholder {
+        color: $color-dark-100;
+      }
+    }
+
+    svg {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 20px;
+      width: 20px;
+
+      path {
+        fill: $color-blue;
+      }
     }
   }
 
@@ -33,9 +65,11 @@
 
   @media(min-width: $size-tablet) {
     margin-top: between(-27px, -30px, $size-tablet, $size-desktop);
+    margin-bottom: between(50px, 100px, $size-tablet, $size-desktop);
 
     &__inner {
       flex-direction: row;
+      justify-content: space-between;
     }
 
     &__search {
@@ -48,6 +82,18 @@
 
       &--desktop {
         display: block;
+      }
+
+      &__input {
+        font-size: between($fontsize-input-mobile, $fontsize-input-desktop, $size-tablet, $size-desktop);
+        padding-top: between(15px, 20px, $size-tablet, $size-desktop);
+        padding-bottom: between(15px, 20px, $size-tablet, $size-desktop);
+        padding-left: between(15px, 20px, $size-tablet, $size-desktop);
+        padding-right: between(50px, 60px, $size-tablet, $size-desktop);
+      }
+
+      svg {
+        right: between(15px, 20px, $size-tablet, $size-desktop);
       }
     }
 
@@ -63,10 +109,23 @@
 
   @media(min-width: $size-desktop) {
     margin-top: -30px;
+    margin-bottom: 100px;
 
     &__search {
       height: 60px;
       margin-bottom: 55px;
+
+      &__input {
+        font-size: $fontsize-input-desktop;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 60px;
+      }
+
+      svg {
+        right: 20px;
+      }
     }
 
     &__content {
