@@ -29,7 +29,7 @@ const restExample: Router.IMiddleware = async (ctx, next) => {
     axios.get('http://apis.is/currency/lb'),
   ].map(reflect))
 
-  const dataOut = fromPairs(zip(
+  ctx.body = fromPairs(zip(
     ['m5', 'arion', 'lb'],
     results.map(({ value, error }) => {
       if (error == null) {
@@ -54,8 +54,6 @@ const restExample: Router.IMiddleware = async (ctx, next) => {
       }
     }),
   ))
-
-  ctx.body = JSON.stringify(dataOut, null, 2)
 
   next()
 }

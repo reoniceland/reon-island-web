@@ -22,13 +22,13 @@ const soapExample: Router.IMiddleware = async (ctx, next) => {
     zipCodeList: zipCode,
   })
     .then((res: any) => {
-      ctx.body = JSON.stringify(res[0].listLatLonOut.$value.match(/\<latLonList\>(.*)\<\/latLonList\>/)[1].split(','))
+      ctx.body = res[0].listLatLonOut.$value.match(/<latLonList>(.*)<\/latLonList>/)[1].split(',')
     })
     .catch((err: any) => {
       ctx.status = 500
-      ctx.body = JSON.stringify({
+      ctx.body = {
         error: 'Server error',
-      })
+      }
 
       console.error(err)
     })

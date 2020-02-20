@@ -1,8 +1,8 @@
 import Router from 'koa-router'
 
-import restExample from './restExample'
-import soapExample from './soapExample'
-import graphqlExample from './graphqlExample'
+import restExample from './api-examples/rest'
+import soapExample from './api-examples/soap'
+import graphqlExample from './api-examples/graphql'
 
 
 const router = new Router()
@@ -13,8 +13,8 @@ router.get('/', (ctx, next) => {
   next()
 })
 
-router.get('/rest/', restExample)
-router.get('/soap/', soapExample)
-router.get('/graphql-example/', graphqlExample)
+router.get('/api-examples/rest/', restExample)
+router.get('/api-examples/soap/', soapExample)
+router.get('/api-examples/graphql/', graphqlExample)
 
 export default router
