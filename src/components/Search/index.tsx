@@ -36,13 +36,13 @@ export default function Search({
       <Icon name={IconName.Search} />
       <Collapse isOpened={results.length > 0}>
         <ul>
-        {results.map((item, index) => {
-          return (
-            <li key={index}>
-              <Link to={item.path} >{item.text}</Link>
-            </li>
-          )
-        })}
+          {results.map((item, index) => {
+            return (
+              <li key={index}>
+                <Link to={item.path} >{item.text}</Link>
+              </li>
+            )
+          })}
         </ul>
       </Collapse>
     </div>

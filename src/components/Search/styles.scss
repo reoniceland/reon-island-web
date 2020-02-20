@@ -62,10 +62,8 @@
   }
 
   @media(min-width: $size-desktop) {
-    margin-bottom: 100px;
 
-
-    &__search {
+    .search {
       height: 64px;
       margin-top: -32px;
       margin-bottom: 30px;
