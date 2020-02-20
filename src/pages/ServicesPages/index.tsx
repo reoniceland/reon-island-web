@@ -34,7 +34,7 @@ const tempNavContent = [
     page: { text: "Fjármál", path: "/" },
   },
   {
-    page: { text: "Fjölskyldan", path: "/þjónustur/fjölskyldan" },
+    page: { text: "Fjölskyldan", path: "/thjonustur/fjolskyldan" },
   },
   {
     page: { text: "Heilsa", path: "/" },

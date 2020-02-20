@@ -15,7 +15,7 @@ import './styles.scss'
 
 export default function Hero() {
   const searchKeys = [
-    { text: "Fæðingarorlof", path: "/þjónustur/fjölskyldan/fæðingarorlof" },
+    { text: "Fæðingarorlof", path: "/thjonustur/fjolskyldan/faedingarorlof" },
     { text: "Endurnýja lyfseðil", path: "/" },
     { text: "Heimagisting", path: "/" },
     { text: "Stofna nýtt einkahlutafélag", path: "/" },
@@ -64,7 +64,7 @@ export default function Hero() {
               {
                 icon: IconName.User,
                 title: "Fjölskyldan",
-                path: "/þjónustur/fjölskyldan",
+                path: "/thjonustur/fjolskyldan",
               },
               {
                 icon: IconName.User,

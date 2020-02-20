@@ -10,6 +10,7 @@ services:
       - yarn:/root/.yarn
     environment:
       PORT: 4000
+      NODE_ENV: production
     restart: unless-stopped
 
   nginx:
@@ -24,6 +25,17 @@ services:
       - NGINX_HOST=island.reonclud.com
       - NGINX_PORT=80
     restart: unless-stopped
+
+  # cypress:
+  #   image: "cypress/included:3.2.0"
+  #   depends_on:
+  #     - node
+  #     - nginx
+  #   environment:
+  #     - CYPRESS_baseUrl=http://nginx
+  #   working_dir: /e2e
+  #   volumes:
+  #     - ./:/e2e
 
 volumes:
   static:

@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 
 import { Link } from 'react-router-dom'
 import Logo from '../../images/island-logo-inverted.png'
-import Text from '../Text'
 import Container from '../Container'
 import Icon from '../Icon'
 import { IconName } from '../../constants'

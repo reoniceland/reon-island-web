@@ -1,9 +1,12 @@
 import React from 'react'
 
 import {
+  Switch,
+  Route,
   useParams,
   useRouteMatch,
-} from 'react-router-dom'
+} from "react-router-dom"
+
 import {
   split,
   capitalize,
@@ -11,12 +14,13 @@ import {
   filter,
 } from 'lodash'
 
+
+
 import PageHeader from '../../components/PageHeader'
 import PageContentWrapper from '../../components/PageContentWrapper'
 import Text from '../../components/Text'
-import ApplicationCard from '../../components/ApplicationCard'
-import { IconName } from '../../constants'
-import FamilyImage from '../../images/family.png'
+
+import Orlof from './Orlof'
 
 
 // FIXME: Replace with real content
@@ -30,15 +34,15 @@ const tempNavContent = [
   {
     page: { text: "Barneignir", path: "/" },
     subPages: [
-      { text: "Barnabætur", path: "/þjónustur/fjölskyldan/barnabætur" },
-      { text: "Faðerni", path: "/þjónustur/fjölskyldan/faðerni" },
-      { text: "Fæðingar- og foreldraorlof", path: "/þjónustur/fjölskyldan/fæðingarorlof" },
-      { text: "Meðganga og fæðing", path: "/þjónustur/fjölskyldan/fæðing" },
-      { text: "Nafngiftir", path: "/þjónustur/fjölskyldan/nafnagiftir" },
-      { text: "Námsmenn með börn", path: "/þjónustur/fjölskyldan/námsmenn" },
-      { text: "Ófrjósemi / tæknifrjóvgun", path: "/þjónustur/fjölskyldan/tæknifrjóvgun" },
-      { text: "Til athugunar á meðgöngu", path: "/þjónustur/fjölskyldan/meðganga" },
-      { text: "Ættleiðing", path: "/þjónustur/fjölskyldan/ættleiðing" },
+      { text: "Barnabætur", path: "/thjonustur/fjolskyldan/barnabætur" },
+      { text: "Faðerni", path: "/thjonustur/fjolskyldan/faðerni" },
+      { text: "Fæðingar- og foreldraorlof", path: "/thjonustur/fjolskyldan/faedingarorlof" },
+      { text: "Meðganga og fæðing", path: "/thjonustur/fjolskyldan/fæðing" },
+      { text: "Nafngiftir", path: "/thjonustur/fjolskyldan/nafnagiftir" },
+      { text: "Námsmenn með börn", path: "/thjonustur/fjolskyldan/námsmenn" },
+      { text: "Ófrjósemi / tæknifrjóvgun", path: "/thjonustur/fjolskyldan/tæknifrjóvgun" },
+      { text: "Til athugunar á meðgöngu", path: "/thjonustur/fjolskyldan/meðganga" },
+      { text: "Ættleiðing", path: "/thjonustur/fjolskyldan/ættleiðing" },
     ],
   },
   {
@@ -75,9 +79,7 @@ const tempNavContent = [
 
 export default function FamilyPages() {
   const { subRoute } = useParams()
-  const { url } = useRouteMatch()
-
-  const activePage = last(split(url, '/'))
+  const { path, url } = useRouteMatch()
 
   const breadCrums = split(split(url, subRoute)[0], '/')
   const filteredCrums = filter(breadCrums, crum => !!crum.length)
@@ -87,25 +89,15 @@ export default function FamilyPages() {
   return (
     <>
       <PageHeader breadCrums={filteredCrums} title={pageTitle} />
+
       <PageContentWrapper pages={tempNavContent} title={pageTitle}>
-        {activePage === "fæðingarorlof" ? (
-          <>
-            <Text variant="h2" withGutter>Fæðingar- og foreldraorlof</Text>
-            <Text variant="p" withGutter isContained>
-              Við fæðingu, ættleiðingu og varanlegt fóstur barns eiga foreldrar rétt á launuðu orlofi.
-              Þeir fá greiðslur eða styrk úr Fæðingarorlofssjóði, eftir því hver staða þeirra á vinnumarkaði er.
-            </Text>
-            <Text variant="h3" withGutter>Umsóknir</Text>
-            <ApplicationCard
-              image={FamilyImage}
-              icon={IconName.Family}
-              title="Sækja um greiðslur í fæðingarorlofi"
-              description="Hægt er að sækja um greiðslur í fæðingarorlof hér rafrænt. Umsókn þarf að vera búið að skila síðasta lagi sex vikum fyrir áætlaðan fæðingardag."
-              tag="Rafræn umsókn"
-              path="/"
-            />
-          </>
-        ) : <Text variant="h2" withGutter>Síða í vinnslu</Text>}
+        <Switch>
+          <Route exact path={`${path}/faedingarorlof`} component={Orlof} />
+
+          <Route path="*">
+            <Text variant="h2" withGutter>Síða í vinnslu</Text>
+          </Route>
+        </Switch>
       </PageContentWrapper>
     </>
   )

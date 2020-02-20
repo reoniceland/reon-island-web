@@ -20,9 +20,9 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={FrontPage} />
 
-          <Route exact path="/þjónustur/fjölskyldan/:subRoute?" component={FamilyPages} />
+          <Route path="/thjonustur/fjolskyldan" component={FamilyPages} />
 
-          <Route exact path="/þjónustur/:subRoute?" component={ServicesPages} />
+          <Route exact path="/thjonustur/:subRoute?" component={ServicesPages} />
         </Switch>
 
         <Footer />

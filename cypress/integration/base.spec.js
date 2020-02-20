@@ -3,7 +3,7 @@
 
 it('Finds foreldraorlof page', () => {
   cy.visit('/')
-  cy.get('[href="/þjónustur/fjölskyldan"]').should('be.visible').click()
+  cy.get('[href="/thjonustur/fjolskyldan"]').should('be.visible').click()
   cy.get('.page-nav__route-item:contains("Barneignir")').should('be.visible').click()
   cy.get('.page-nav__sub-route-item:contains("Fæðingar- og foreldraorlof")').should('be.visible').click()
   cy.get('.text--h2').contains('Fæðingar- og foreldraorlof')

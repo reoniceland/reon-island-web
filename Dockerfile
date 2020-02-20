@@ -1,7 +1,7 @@
 FROM node:11.15
 
 WORKDIR /usr/src/app
-ENV NODE_ENV production
+ENV NODE_ENV=production
 
 # Install node dependencies:
 ADD package.json .
