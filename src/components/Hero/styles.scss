@@ -54,47 +54,6 @@
     }
   }
 
-  &__search {
-    width: 100%;
-    height: 54px;
-    border-radius: 5px;
-    margin-top: -27px;
-    box-shadow: 0 4px 30px rgba(0,0,60,0.1);
-    margin-bottom: 20px;
-    position: relative;
-    overflow: hidden;
-
-    &__input {
-      width: 100%;
-      height: 100%;
-      background-color: $color-white;
-      border: 0;
-      font-size: $fontsize-input-mobile;
-      color: $color-dark-100;
-      padding: 15px 50px 15px 15px;
-      box-sizing: border-box;
-      outline: none;
-      border-radius: 5px;
-
-      &::placeholder {
-        color: $color-dark-100;
-      }
-    }
-
-    svg {
-      position: absolute;
-      right: 15px;
-      top: 50%;
-      transform: translateY(-50%);
-      height: 20px;
-      width: 20px;
-
-      path {
-        fill: $color-blue;
-      }
-    }
-  }
-
   &__keywords-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -158,24 +117,6 @@
       padding: between(40px, 90px, $size-tablet, $size-desktop) 0 between(40px, 122px, $size-tablet, $size-desktop) 0;
     }
 
-    &__search {
-      height: between(54px, 64px, $size-tablet, $size-desktop);
-      margin-top: between(-27px, -32px, $size-tablet, $size-desktop);
-      margin-bottom: between(20px, 30px, $size-tablet, $size-desktop);
-
-      &__input {
-        font-size: between($fontsize-input-mobile, $fontsize-input-desktop, $size-tablet, $size-desktop);
-        padding-top: between(15px, 20px, $size-tablet, $size-desktop);
-        padding-bottom: between(15px, 20px, $size-tablet, $size-desktop);
-        padding-left: between(15px, 20px, $size-tablet, $size-desktop);
-        padding-right: between(50px, 60px, $size-tablet, $size-desktop);
-      }
-
-      svg {
-        right: between(15px, 20px, $size-tablet, $size-desktop);
-      }
-    }
-
     &__keywords-wrapper {
       margin-bottom: between(15px, 40px, $size-tablet, $size-desktop);
     }
@@ -193,24 +134,6 @@
 
     &__header {
       padding: 90px 0 122px 0;
-    }
-
-    &__search {
-      height: 64px;
-      margin-top: -32px;
-      margin-bottom: 30px;
-
-      &__input {
-        font-size: $fontsize-input-desktop;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        padding-left: 20px;
-        padding-right: 60px;
-      }
-
-      svg {
-        right: 20px;
-      }
     }
 
     &__keywords-wrapper {

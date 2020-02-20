@@ -6,11 +6,11 @@ import {
 
 import Text from '../Text'
 import Container from '../Container'
-import Icon from '../Icon'
 import { IconName } from '../../constants'
 import ShortcutBlocks from '../ShortcutBlocks'
 
 import './styles.scss'
+import Search from '../Search'
 
 
 export default function Hero() {
@@ -38,14 +38,7 @@ export default function Hero() {
           </Container>
         </div>
         <Container position="leftHalf">
-          <div className="hero__search">
-            <input
-              className="hero__search__input"
-              type="text"
-              placeholder="Leita á vefnum"
-            />
-            <Icon name={IconName.Search} />
-          </div>
+          <Search searchKeys={searchKeys}/>
           <div className="hero__keywords-wrapper">
             {searchKeys.map((searchItem, index) => (
               <Link to={searchItem.path} key={index} className="hero__keyword">

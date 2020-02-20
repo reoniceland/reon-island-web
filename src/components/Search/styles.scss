@@ -1,0 +1,127 @@
+@import 'src/scss/variables';
+@import 'src/scss/between';
+
+.search {
+  width: 100%;
+  height: 54px;
+  border-radius: 5px;
+  margin-top: -27px;
+  box-shadow: 0 4px 30px rgba(0,0,60,0.1);
+  margin-bottom: 20px;
+  position: relative;
+  overflow: visible;
+
+  &__input {
+    width: 100%;
+    height: 100%;
+    background-color: $color-white;
+    border: 0;
+    font-size: $fontsize-input-mobile;
+    color: $color-dark-100;
+    padding: 15px 50px 15px 15px;
+    box-sizing: border-box;
+    outline: none;
+    border-radius: 5px;
+
+    &::placeholder {
+      color: $color-dark-100;
+    }
+  }
+
+  svg {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 20px;
+
+    path {
+      fill: $color-blue;
+    }
+  }
+  @media(min-width: $size-tablet) {
+    flex-direction: row-reverse;
+
+    .search {
+      height: between(54px, 64px, $size-tablet, $size-desktop);
+      margin-top: between(-27px, -32px, $size-tablet, $size-desktop);
+
+      &__input {
+        font-size: between($fontsize-input-mobile, $fontsize-input-desktop, $size-tablet, $size-desktop);
+        padding-top: between(15px, 20px, $size-tablet, $size-desktop);
+        padding-bottom: between(15px, 20px, $size-tablet, $size-desktop);
+        padding-left: between(15px, 20px, $size-tablet, $size-desktop);
+        padding-right: between(50px, 60px, $size-tablet, $size-desktop);
+      }
+
+      svg {
+        right: between(15px, 20px, $size-tablet, $size-desktop);
+      }
+    }
+  }
+
+  @media(min-width: $size-desktop) {
+    margin-bottom: 100px;
+
+
+    &__search {
+      height: 64px;
+      margin-top: -32px;
+      margin-bottom: 30px;
+
+      &__input {
+        font-size: $fontsize-input-desktop;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 60px;
+      }
+
+      svg {
+        right: 20px;
+      }
+    }
+  }
+}
+
+.ReactCollapse--collapse {
+  position: absolute;
+  height: fit-content;
+  margin-top: -5px;
+  width: 100%;
+  background:white ;
+  z-index: 10;
+  border-radius: 5px;
+  box-shadow: 0px 20px 20px 0px rgba(0,0,0, 0.3);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  z-index: 1000;
+  transition: height .5s;
+
+  ul {
+    padding: 0;
+    margin-top: 0;
+
+    li {
+      width: 100%;
+      list-style: none;
+      background: $color-white;
+      padding: 10px 0;
+      border-radius: 5px;
+      cursor: pointer;
+
+      a {
+        margin-left: 20px;
+      }
+
+      &:hover {
+        background-color: $color-blue;
+        a {
+          color: $color-white;
+        }
+      }
+    }
+  }
+}

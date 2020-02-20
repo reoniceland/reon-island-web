@@ -1,0 +1,35 @@
+@import 'src/scss/variables';
+@import 'src/scss/between';
+
+.input-email{
+  &__label {
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: $color-dark-100;
+  }
+  &__input {
+    max-width: 296px;
+    height: 24px;
+    border-radius: 5px;
+    border: 1px solid $color-dark-10;
+    padding: 12px 24px;
+    color:$color-dark-50;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: $fontsize-p-mobile;
+    &--disabled {
+      background: #F2F2F5;
+      &:focus {
+        outline: none;
+      }
+    }
+    &--active {
+      &:focus {
+        outline: none;
+        box-shadow: 0px 0px 3px 0px rgba(#0061FF, 0.5);
+      }
+    }
+  }
+}
