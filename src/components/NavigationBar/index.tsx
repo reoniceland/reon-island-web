@@ -12,8 +12,8 @@ import './styles.scss'
 export default function NavigationBar() {
   return (
     <nav className="nav-bar">
-      <Link to="/">
-        <img className="nav-bar__logo" src={Logo} alt="island.is" />
+      <Link className="nav-bar__logo" to="/">
+        <img src={Logo} alt="island.is" />
       </Link>
 
       <div className="nav-bar__content">
