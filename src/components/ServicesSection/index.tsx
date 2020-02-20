@@ -39,7 +39,7 @@ export default function ServicesSection() {
     {
       icon: IconName.Wallet,
       title: "Fjármál",
-      links: [{ text: "Bóka tíma hjá lækni", linkTo: "/" }, { text: "Endurnýja lyfseðil", linkTo: "/" }],
+      links: [{ text: "Lorem ipsum", linkTo: "/" }, { text: "Lorem ipsum", linkTo: "/" }],
       linkTo: "/",
     },
     {
@@ -51,13 +51,13 @@ export default function ServicesSection() {
     {
       icon: IconName.Graph,
       title: "Heilsa",
-      links: [{ text: "Bóka tíma hjá lækni", linkTo: "/" }, { text: "Endurnýja lyfseðil", linkTo: "/" }],
+      links: [{ text: "Lorem ipsum", linkTo: "/" }, { text: "Lorem ipsum", linkTo: "/" }],
       linkTo: "/",
     },
     {
       icon: IconName.Graph,
       title: "Húsnæði og heimili",
-      links: [{ text: "Bóka tíma hjá lækni", linkTo: "/" }, { text: "Endurnýja lyfseðil", linkTo: "/" }],
+      links: [{ text: "Lorem ipsum", linkTo: "/" }, { text: "Lorem ipsum", linkTo: "/" }],
       linkTo: "/",
     },
   ]
