@@ -1,0 +1,15 @@
+node_modules
+build
+storybook-static
+server/dist
+
+nginx
+docker-compose.yml
+Dockerfile
+README.md
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.gitignore
+.dockerignore
+.editorconfig

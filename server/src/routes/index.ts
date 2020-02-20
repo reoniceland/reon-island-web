@@ -8,7 +8,7 @@ import graphqlExample from './api-examples/graphql'
 const router = new Router()
 
 
-router.get('/', (ctx, next) => {
+router.get('/status/', (ctx, next) => {
   ctx.body = 'Status: UP'
   next()
 })

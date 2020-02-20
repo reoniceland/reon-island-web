@@ -14,7 +14,12 @@ app.use(json())
 app.use(router.routes())
 app.use(router.allowedMethods())
 
+const port = process.env.PORT || 4000
 
-app.listen({ port: 4000 }, () => {
-  console.log(`🚀 GraphQl Playground: http://localhost:4000${apolloServer.graphqlPath}`)
+app.listen({ port }, () => {
+  if (process.env.NODE_ENV === 'production') {
+    console.log(`🚀 Koa started on port: ${port}`)
+  } else {
+    console.log(`🚀 GraphQl Playground: http://localhost:${port}${apolloServer.graphqlPath}`)
+  }
 })

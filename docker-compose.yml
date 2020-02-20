@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  node:
+    build:
+      context: .
+    volumes:
+      - static:/usr/src/app/build:rw
+      - storybook:/usr/src/app/storybook-static:rw
+      - yarn:/root/.yarn
+    environment:
+      PORT: 4000
+    restart: unless-stopped
+
+  nginx:
+    build:
+      context: ./nginx
+    volumes:
+      - static:/data/static:ro
+      - storybook:/data/storybook:ro
+    ports:
+      - "8080:80"
+    environment:
+      - NGINX_HOST=island.reonclud.com
+      - NGINX_PORT=80
+    restart: unless-stopped
+
+volumes:
+  static:
+  storybook:
+  yarn:
