@@ -25,11 +25,19 @@
   &--h3 {
     font-size: $fontsize-h3-mobile;
     font-weight: 600;
+
+    &--withGutter {
+      margin-bottom: 30px;
+    }
   }
 
   &--h4 {
     font-size: $fontsize-h4-mobile;
     font-weight: 600;
+
+    &--withGutter {
+      margin-bottom: 15px;
+    }
   }
 
   &--h5 {
@@ -51,6 +59,15 @@
 
     &--withGutter {
       margin-bottom: 30px;
+    }
+  }
+
+  &--small {
+    font-size: $fontsize-small-mobile;
+    color: $color-dark-80;
+
+    &--withGutter {
+      margin-bottom: 25px;
     }
   }
 
@@ -77,10 +94,18 @@
 
     &--h3 {
       font-size: between($fontsize-h3-mobile, $fontsize-h3-desktop, $size-tablet, $size-desktop);
+
+      &--withGutter {
+        margin-bottom: between(30px, 30px, $size-tablet, $size-desktop);
+      }
     }
 
     &--h4 {
       font-size: between($fontsize-h4-mobile, $fontsize-h4-desktop, $size-tablet, $size-desktop);
+
+      &--withGutter {
+        margin-bottom: between(15px, 20px, $size-tablet, $size-desktop);
+      }
     }
 
     &--h5 {
@@ -102,6 +127,14 @@
         margin-bottom: between(30px, 50px, $size-tablet, $size-desktop);
       }
     }
+
+    &--small {
+      font-size: between($fontsize-small-mobile, $fontsize-small-desktop, $size-tablet, $size-desktop);
+
+      &--withGutter {
+        margin-bottom: between(25px, 25px, $size-tablet, $size-desktop);
+      }
+    }
   }
 
   @media(min-width: $size-desktop) {
@@ -119,10 +152,18 @@
 
     &--h3 {
       font-size: $fontsize-h3-desktop;
+
+      &--withGutter {
+        margin-bottom: 30px;
+      }
     }
 
     &--h4 {
       font-size: $fontsize-h4-desktop;
+
+      &--withGutter {
+        margin-bottom: 20px;
+      }
     }
 
     &--h5 {
@@ -142,6 +183,14 @@
 
       &--withGutter {
         margin-bottom: 50px;
+      }
+    }
+
+    &--small {
+      font-size: $fontsize-small-desktop;
+
+      &--withGutter {
+        margin-bottom: 25px;
       }
     }
   }

@@ -45,7 +45,7 @@ export default function ServicesSection() {
     {
       icon: IconName.User,
       title: "Fjölskyldan",
-      links: [{ text: "Barnabætur", linkTo: "/þjónustur/fjölskylda/barnabætur" }, { text: "Fæðingar- og foreldraorlof", linkTo: "/þjónustur/fjölskylda/fæðingarorlof" }],
+      links: [{ text: "Barnabætur", linkTo: "/þjónustur/fjölskylda/barnabætur" }, { text: "Fæðingar- og foreldraorlof", linkTo: "/þjónustur/fjölskyldan/fæðingarorlof" }],
       linkTo: "/",
     },
     {

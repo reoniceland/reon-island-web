@@ -25,4 +25,5 @@ export enum IconName {
   Att = "att",
   Facebook = "facebook",
   IndicatorDown = "indicatorDown",
+  Family = "family",
 }

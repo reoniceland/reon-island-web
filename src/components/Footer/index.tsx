@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Link } from 'react-router-dom'
 import Logo from '../../images/island-logo-inverted.png'
@@ -6,6 +6,7 @@ import Text from '../Text'
 import Container from '../Container'
 import Icon from '../Icon'
 import { IconName } from '../../constants'
+import Collapsable from '../Collapsable'
 
 import './styles.scss'
 
@@ -64,6 +65,8 @@ export default function Footer() {
     },
   ]
 
+  const [linkContentOpen, setLinkContentOpen] = useState<{ [i: number]: boolean }>({ ...linksContent.map(() => false) })
+
   return (
     <div className="footer">
       <Container>
@@ -81,7 +84,29 @@ export default function Footer() {
               ))}
             </div>
           </div>
-          <div className="footer__links">
+          <div className="footer__links footer__links--mobile">
+            {linksContent.map((chapter, cIndex) => (
+              <div key={cIndex} className="footer__link-chapter">
+                <button
+                  className={`footer__link-chapter__btn ${linkContentOpen[cIndex] && "footer__link-chapter__btn--isActive"}`}
+                  onClick={() => setLinkContentOpen({ ...linkContentOpen, [cIndex]: !linkContentOpen[cIndex] })}
+                >
+                  {chapter.title}
+                  <Icon name={IconName.IndicatorDown} />
+                </button>
+                <Collapsable isOpen={linkContentOpen[cIndex]}>
+                  <div className="footer__link-collapsable">
+                    {chapter.links.map((link, lIndex) => (
+                      <Link key={lIndex} to={link.path} className="footer__link-item">
+                        {link.text}
+                      </Link>
+                    ))}
+                  </div>
+                </Collapsable>
+              </div>
+            ))}
+          </div>
+          <div className="footer__links footer__links--desktop">
             {linksContent.map((chapter, cIndex) => (
               <div key={cIndex} className="footer__link-chapter">
                 <span className="footer__link-chapter__title">{chapter.title}</span>

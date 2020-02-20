@@ -1,0 +1,91 @@
+@import 'src/scss/variables';
+@import 'src/scss/between';
+
+.appl-card {
+  display: block;
+  border-radius: 5px;
+  margin-bottom: 50px;
+  background-color: $color-white;
+  padding: 25px;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__icon {
+    margin-bottom: 20px;
+
+    svg {
+      height: 20px;
+      width: 20px;
+
+      path {
+        fill: $color-purple;
+      }
+    }
+  }
+
+  &__btn {
+    display: none;
+  }
+
+  &__tag {
+    background-color: $color-dark-10;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 10px;
+    color: $color-dark-50;
+    font-weight: 500;
+  }
+
+  @media(min-width: $size-tablet) {
+    margin-bottom: between(50px, 100px, $size-tablet, $size-desktop);
+    overflow: hidden;
+    padding: 0;
+    display: flex;
+
+    &__image {
+      width: 40%;
+      background-size: cover;
+      background-position: 50% 50%;
+    }
+
+    &__content {
+      position: relative;
+      padding: 30px 60px;
+      width: 60%;
+    }
+
+    &__icon {
+      margin-bottom: 0;
+      position: absolute;
+      background-color: $color-white;
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      left: -20px;
+      top: 50%;
+      box-shadow: 0px 4px 30px rgba(0,0,60,0.1);
+      transform: translateY(-20px);
+    }
+
+    &__btn {
+      display: block;
+    }
+
+    &__tag {
+      position: absolute;
+      right: 15px;
+      bottom: 15px;
+    }
+  }
+
+  @media(min-width: $size-desktop) {
+    margin-bottom: 100px;
+  }
+}

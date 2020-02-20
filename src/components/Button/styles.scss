@@ -29,6 +29,14 @@
     }
   }
 
+  &--purple {
+    background-color: $color-purple;
+
+    &:hover {
+      background-color: $color-purple-hover;
+    }
+  }
+
   &--secondary {
     border: 1px solid $color-blue;
     background-color: $color-white;

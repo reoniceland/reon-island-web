@@ -1,5 +1,7 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useRef } from 'react'
 
+
+import './styles.scss'
 
 interface Props {
   isOpen: boolean
