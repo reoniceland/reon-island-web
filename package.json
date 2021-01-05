@@ -66,7 +66,7 @@
     "@types/soap": "^0.21.0",
     "apollo-boost": "^0.4.7",
     "apollo-server-koa": "^2.10.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bluebird": "^3.7.2",
     "cypress": "^4.0.2",
     "isomorphic-fetch": "^2.2.1",
